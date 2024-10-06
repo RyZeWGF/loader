@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	</head>
+	<body style="background-color: black; color: white">
+		<pre style="word-wrap: break-word; white-space: pre-wrap;">
+print("[REAPERLOADER]: Initializing...")
+
+local function loadScript()
+    print("[REAPERLOADER]: Successfully loaded.")
+end
+
+local success, errorMsg = pcall(function()
+    loadScript()
+end)
+
+if not success then
+    error("[REAPERLOADER]: Failed to load. " .. errorMsg)
+else
+    print("[REAPERLOADER]: Finished loading.")
+end 
+		</pre>
+	</body>
+</html>
