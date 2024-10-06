@@ -1,0 +1,168 @@
+/* General Styling */
+body, html {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: var(--black);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #1f1f1f;
+    --white: #ffffff;
+    --hover-background: rgba(255, 165, 0, 0.8);
+}
+
+/* Reset default ul and a styles */
+ul, ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header and Navigation */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 3;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul {
+    margin: 20px 0;
+    font-size: 1.5em;
+    color: var(--white);
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Active Link for Home */
+.navbar .active {
+    background: linear-gradient(90deg, rgba(0, 128, 0, 0.8) 0%, rgba(50, 205, 50, 0.8) 100%);
+    border-radius: 10px;
+}
+
+/* Hover effect for other links */
+.navbar ul:hover {
+    background: linear-gradient(90deg, rgba(255, 99, 71, 0.8) 0%, rgba(255, 165, 0, 0.8) 100%);
+    border-radius: 10px;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Video Styling (for the home page only) */
+.video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text Overlay */
+.text-overlay {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: var(--white);
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    backdrop-filter: blur(12px);
+    border-radius: 10px;
+    background-color: rgba(31, 31, 31, 0.5);
+    max-width: 90%;
+    opacity: 80%;
+}
+
+/* Style for h1 */
+h1 {
+    position: relative;
+    z-index: 3;
+    color: var(--white);
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: colorShift 5s infinite linear;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar ul {
+        font-size: 1.2em;
+        margin: 15px 0;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .text-overlay {
+        top: 60px;
+        padding: 15px;
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar ul {
+        font-size: 1em;
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .text-overlay {
+        top: 50px;
+        padding: 10px;
+        max-width: 100%;
+    }
+}
+
+@keyframes colorShift {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
